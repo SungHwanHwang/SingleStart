@@ -110,6 +110,7 @@ namespace SingleProject
 
                 value = reader["userValue"].ToString();
                 MessageBox.Show("접속 성공");
+                Console.WriteLine("접속 성공");
              
             }
             catch(Exception err)

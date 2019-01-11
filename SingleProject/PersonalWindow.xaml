@@ -1,0 +1,62 @@
+﻿<Window x:Class="SingleProject.PersonalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PersonalWindow" Height="350" Width="350">
+    <Grid Background="AntiqueWhite">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="0" Margin="0,0,0,19">
+            <TextBlock Name="connectUser" FontWeight="Black"/>
+            <TextBlock FontWeight="Black" Margin="0,0,10,0">보유 캐쉬 : </TextBlock>
+            <TextBox Width="180" IsReadOnly="True" Name="cash"/>
+            <Button Margin="10,0,10,0" Click="Add_Value">충전</Button>
+        </StackPanel>
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="1">
+            <Label>닐씨 자리</Label>
+        </StackPanel>
+        <StackPanel Grid.ColumnSpan="2" Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontWeight="Black" Text="광역시/도 : "></TextBlock>
+                <ComboBox Name="comboCity" Margin="10,0,10,0" HorizontalAlignment="Left" Width="170" SelectionChanged="comboCity_SelectionChanged">
+                    <ComboBoxItem Content="강원도" Name="GangWon"/>
+                    <ComboBoxItem Content="경기도" Name="GyungGi"/>
+                    <ComboBoxItem Content="경상남도" Name="GyungNam"/>
+                    <ComboBoxItem Content="경상북도" Name="GyungBuk"/>
+                    <ComboBoxItem Content="광주광역시" Name="GwangJu"/>
+                    <ComboBoxItem Content="대구광역시" Name="DaeGu"/>
+                    <ComboBoxItem Content="대전광역시" Name="DaeJeon"/>
+                    <ComboBoxItem Content="부산광역시" Name="Busan"/>
+                    <ComboBoxItem Content="서울특별시" Name="Seoul"/>
+                    <ComboBoxItem Content="세종큭별자치시" Name="Sejong"/>
+                    <ComboBoxItem Content="울산광역시" Name="UlSan"/>
+                    <ComboBoxItem Content="인천광역시" Name="Incheon"/>
+                    <ComboBoxItem Content="전라남도" Name="JeonNam"/>
+                    <ComboBoxItem Content="전라북도" Name="JeonBuk"/>
+                    <ComboBoxItem Content="제주특별자치도" Name="Jeju"/>
+                    <ComboBoxItem Content="충청남도" Name="ChungNam"/>
+                    <ComboBoxItem Content="충청북도" Name="ChungBuk"/>
+                </ComboBox>
+            </StackPanel>
+            <TextBlock/>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontWeight="Black" Text="시/군/구 : "/>
+                <ComboBox Name="comboGuGun" Margin="17,0,10,0" HorizontalAlignment="Left" Width="170"/>
+            </StackPanel>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <TextBlock/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button Width="100" Name="addMoney" Click="Search_Map">검색</Button>
+                <Button Width="100" Name="closing" Click="Closing_Click" Margin="50,0,0,0">종료</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

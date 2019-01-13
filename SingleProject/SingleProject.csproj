@@ -152,6 +152,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="web\index.html" />
+    <Content Include="web\JavaScript1.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

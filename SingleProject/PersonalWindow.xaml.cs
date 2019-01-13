@@ -23,6 +23,18 @@ namespace SingleProject
         //  접속 유저명 변수
         string personalUser;
         string personalValue;
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                myWeb.Source = new Uri("http://localhost:80");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+        }
         
         public PersonalWindow(string idForPassToPersonal, string currentValue)
         {

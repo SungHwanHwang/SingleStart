@@ -152,7 +152,9 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="web\index.html" />
-    <Content Include="web\JavaScript1.js" />
+    <Content Include="web\weather.css" />
+    <Content Include="web\weather.html" />
+    <Content Include="web\weather.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

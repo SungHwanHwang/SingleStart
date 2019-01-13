@@ -28,7 +28,7 @@ namespace SingleProject
         {
             try
             {
-                myWeb.Source = new Uri("http://localhost:80");
+                weatherWeb.Source = new Uri("http://localhost:80/weather.html");
             }
             catch (Exception err)
             {

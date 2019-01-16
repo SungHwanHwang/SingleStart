@@ -7,8 +7,12 @@ let icon = document.getElementById("icon");
 let temperature = document.getElementById("temp");
 let humidity = document.getElementById("humidity-div");
 
+
+
 searchButton.addEventListener("click", findWeatherDetails);
 searchInput.addEventListener("keyup", enterPressed);
+
+
 
 function enterPressed(event)
 {
@@ -29,6 +33,13 @@ function findWeatherDetails()
         httpRequestAsync(searchLink, theResponse);
     }
 }
+
+function DefualtWeather()
+{
+    let searchLink = "https://api.openweathermap.org/data/2.5/weather?q=" + "Seoul" + "&appid=" + appKey;
+    httpRequestAsync(searchLink, theResponse);
+}
+
 
 function theResponse(response)
 {

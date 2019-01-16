@@ -11,26 +11,47 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System.Windows.Forms;
+using System.Windows.Navigation;
 
 namespace SingleProject
 {
     public partial class WebBrowserControl : Window
     {
-        public WebBrowserControl()
+        string finalBigCity = "";
+        string finalInnerCity = "";
+        public WebBrowserControl(string passBigCity, string passInnerCity)
         {
             InitializeComponent();
+            finalBigCity = passBigCity;
+            finalInnerCity = passInnerCity;
+
+
+            System.Windows.Forms.MessageBox.Show(finalBigCity + ", " + finalInnerCity);
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public void Click_Button(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                myWeb.Source = new Uri("http://localhost:80");
-            }
-            catch(Exception err)
-            {
-                MessageBox.Show(err.ToString());
-            }
+            try  
+            {  
+                this.myWeb.InvokeScript("JavaScriptFunctionWithoutParameters", finalBigCity+","+finalInnerCity);  
+               
+            }  
+            catch (Exception ex)  
+            {  
+                string msg = "Could not call script: " +  
+                            ex.Message +  
+                            "Please click the 'Load HTML Document with Script' button to load.";  
+                System.Windows.Forms.MessageBox.Show(msg);  
+            }  
+
+        }
+
+        public void ForceClick(object sender, ExecutedRoutedEventHandler e)
+        {
+            btn.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Button.ClickEvent, btn));
         }
 
         private void Button_Back(object sender, RoutedEventArgs e)
@@ -42,7 +63,7 @@ namespace SingleProject
             }
             catch(Exception err)
             {
-                MessageBox.Show(err.ToString());
+                System.Windows.Forms.MessageBox.Show(err.ToString());
             }
         }
 
@@ -55,7 +76,7 @@ namespace SingleProject
             }
             catch (Exception err)
             {
-                MessageBox.Show(err.ToString());
+                System.Windows.Forms.MessageBox.Show(err.ToString());
             }
         }
 
@@ -67,7 +88,7 @@ namespace SingleProject
             }
             catch(Exception err)
             {
-                MessageBox.Show(err.ToString());
+                System.Windows.Forms.MessageBox.Show(err.ToString());
             }
         }
     }

@@ -41,6 +41,7 @@ namespace SingleProject
             InitializeComponent();
             InitDBSetting();
             OracleConnection();
+            userId.Focus();
         }
 
         ~Login()
@@ -85,7 +86,7 @@ namespace SingleProject
             }
         }
 
-        public void OracleIdPasswordSelection()
+        public void Login_Click(object sender, EventArgs e)
         {
             Security se = new Security();
             try
@@ -101,6 +102,7 @@ namespace SingleProject
                         MessageBox.Show("패스워드 오류입니다.");
                         return;    
                     }
+                
                 }
                 else
                 {
@@ -111,6 +113,11 @@ namespace SingleProject
                 value = reader["userValue"].ToString();
                 MessageBox.Show("접속 성공");
                 Console.WriteLine("접속 성공");
+
+                //  새창 띄우기, 새창에서 작업하기(위치 기반 시작)
+                PersonalWindow pw = new PersonalWindow(userId.Text, value);
+                pw.ShowDialog();
+                Window.GetWindow(this).Close();
              
             }
             catch(Exception err)
@@ -119,20 +126,15 @@ namespace SingleProject
             }
         }
 
-        public void Login_Click(object sender, EventArgs e)
-        {
-            OracleIdPasswordSelection();
-
-            //  새창 띄우기, 새창에서 작업하기(위치 기반 시작)
-            PersonalWindow pw = new PersonalWindow(userId.Text, value);
-            pw.ShowDialog();
-            Window.GetWindow(this).Close();
-        }
-
         public void Register_Click(object sender, EventArgs e)
         {
             Registration res = new Registration();
             res.ShowDialog();
+        }
+
+        public void EnterKeyEvent(object sender, EventArgs e)
+        {
+   
         }
     }
 }

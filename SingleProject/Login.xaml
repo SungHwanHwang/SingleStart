@@ -16,7 +16,7 @@
                 <TextBox Name ="password" Width="150" Focusable="True"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
-                <Button Width="100" Name="btnLogin" Click="Login_Click">LOGIN</Button>
+                <Button Width="100" Name="btnLogin" Click="Login_Click" IsDefault="True">LOGIN</Button>
                 <Button Width="100" Name="btnRegistration" Margin="50,0,0,0" Click="Register_Click">REGISTER</Button>
             </StackPanel>
         </StackPanel>

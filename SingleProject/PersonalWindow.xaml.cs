@@ -83,6 +83,9 @@ namespace SingleProject
 
             switch (city)
             {
+                case "Mu":
+                    comboGuGun.ItemsSource = null;
+                    break;
                 case "GangWon":
                     comboGuGun.ItemsSource = gangWon;
                     break;

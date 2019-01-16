@@ -51,6 +51,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock FontWeight="Black" Text="광역시/도 : " Width="64"/>
                 <ComboBox x:Name="comboCity" Margin="10,0,10,0" HorizontalAlignment="Left" Width="459" SelectionChanged="comboCity_SelectionChanged">
+                    <ComboBoxItem Content="" x:Name="Mu"/>
                     <ComboBoxItem Content="강원도" x:Name="GangWon"/>
                     <ComboBoxItem Content="경기도" x:Name="GyungGi"/>
                     <ComboBoxItem Content="경상남도" x:Name="GyungNam"/>

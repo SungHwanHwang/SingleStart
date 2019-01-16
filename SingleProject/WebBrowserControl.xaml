@@ -12,7 +12,5 @@
         <Button Content="Forward" HorizontalAlignment="Left" Margin="60,4,0,0" VerticalAlignment="Top" Width="45" Height="22" Click="Button_Forward" Grid.ColumnSpan="2"/>
         <TextBox Name="address" HorizontalAlignment="Left" Height="23" Margin="7,4,0,0" TextWrapping="Wrap" Text="Enter Address" VerticalAlignment="Top" Width="637" Grid.Column="1"/>
         <Button Content="GO" HorizontalAlignment="Left" Margin="649,5,0,0" VerticalAlignment="Top" Width="30" Height="22" Click="Button_Go" Grid.Column="1"/>
-        <Button Name="btn" Grid.ColumnSpan="2" Content="Button" HorizontalAlignment="Left" Margin="30,783,0,0" VerticalAlignment="Top" Width="75" Click="Click_Button"/>
-
     </Grid>
 </Window>

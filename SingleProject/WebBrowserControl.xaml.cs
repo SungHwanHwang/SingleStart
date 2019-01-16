@@ -28,30 +28,16 @@ namespace SingleProject
             finalBigCity = passBigCity;
             finalInnerCity = passInnerCity;
 
+            try
+            {
+                this.myWeb.Source = new Uri("http://localhost:80/index.html?" + "outerCity=" + passBigCity + "&" + "innerCity=" + passInnerCity);
+            }
+            catch (Exception err)
+            {
+                System.Windows.Forms.MessageBox.Show(err.ToString());
+            }
 
-            System.Windows.Forms.MessageBox.Show(finalBigCity + ", " + finalInnerCity);
-        }
-
-        public void Click_Button(object sender, RoutedEventArgs e)
-        {
-            try  
-            {  
-                this.myWeb.InvokeScript("JavaScriptFunctionWithoutParameters", finalBigCity+","+finalInnerCity);  
-               
-            }  
-            catch (Exception ex)  
-            {  
-                string msg = "Could not call script: " +  
-                            ex.Message +  
-                            "Please click the 'Load HTML Document with Script' button to load.";  
-                System.Windows.Forms.MessageBox.Show(msg);  
-            }  
-
-        }
-
-        public void ForceClick(object sender, ExecutedRoutedEventHandler e)
-        {
-            btn.RaiseEvent(new RoutedEventArgs(System.Windows.Controls.Button.ClickEvent, btn));
+           // System.Windows.Forms.MessageBox.Show(finalBigCity + ", " + finalInnerCity);
         }
 
         private void Button_Back(object sender, RoutedEventArgs e)

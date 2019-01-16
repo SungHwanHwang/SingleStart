@@ -149,14 +149,6 @@ namespace SingleProject
         public void Search_Map(object sender, EventArgs e)
         {
             WebBrowserControl web = new WebBrowserControl(passBigCity, passInnerCity);
-            try
-            {
-                web.myWeb.Source = new Uri("http://localhost:80/?" + "outerCity=" +  passBigCity + "&" + "innerCity=" +  passInnerCity);
-            }
-            catch (Exception err)
-            {
-                System.Windows.Forms.MessageBox.Show(err.ToString());
-            }
             web.ShowDialog();
         }
 
